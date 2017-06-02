@@ -1,0 +1,3 @@
+# first do acs-engine [name of your json]
+# then do the following:
+# azure group deployment create demo-service --template-file ./_output/demo-service/azuredeploy.json --parameters-file ./_output/demo-service/azuredeploy.parameters.json
