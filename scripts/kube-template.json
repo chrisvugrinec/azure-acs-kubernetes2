@@ -1,0 +1,39 @@
+{
+  "apiVersion": "vlabs",
+  "properties": {
+    "orchestratorProfile": {
+      "orchestratorType": "Kubernetes",
+      "orchestratorVersion": "1.6.2"
+    },
+    "masterProfile": {
+      "count": 1,
+      "dnsPrefix": "kubedemo2-chris",
+      "vmSize": "Standard_D2_v2",
+      "vnetSubnetId": "/subscriptions/3a323844-2679-4178-a8b5-66fa692d5e44/resourceGroups/kubedemo2/providers/Microsoft.Network/virtualNetworks/vnet-demo-services/subnets/subnet-demo-services",
+      "firstConsecutiveStaticIP": "172.35.0.10" 
+    },
+    "agentPoolProfiles": [
+      {
+        "name": "agentpool1",
+        "count": 3,
+        "vmSize": "Standard_D2_v2",
+        "vnetSubnetId": "/subscriptions/3a323844-2679-4178-a8b5-66fa692d5e44/resourceGroups/kubedemo2/providers/Microsoft.Network/virtualNetworks/vnet-demo-services/subnets/subnet-demo-services",
+        "availabilityProfile": "AvailabilitySet"
+      }
+    ],
+    "linuxProfile": {
+      "adminUsername": "azureuser",
+      "ssh": {
+        "publicKeys": [
+          {
+            "keyData": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDcdlNaYqD0tOeP8wNiuXMzx3kN9ZrVzJr0BcYb4SLn4hkHnp6U1O2q/qaRSb36qf/apKAV8R012o15Vic6iaYle1cfMjPgXrii2mSlnSa0RyAn/kqV3zWYn5r+ivWK5polemqagsdgqI9WblDzN+1knuCfYedvJ0eBOtSeo2iuRBJfVOefOUu09bX0REf68s061EHtNIPtgxqM9xQ7UpVDWxE09dFIA5bWmuOn0ZiE3gd2ZQuCsp2O/wSZnXA2kO3PbPNcSNUfVGgj30gzaXMcXET7btIRwBaBsy+GpBXTDDcfiocuTyQR6VbWPQjAKKuPG534QyW+w3pLFN2aS6ct chris@Air-chris.lan"
+          }
+        ]
+      }
+    },
+    "servicePrincipalProfile": {
+      "servicePrincipalClientID": "e0d043bc-07cc-4332-a8b2-b9c7bdc7a5e9",
+      "servicePrincipalClientSecret": "95fa5d25-c013-4881-9659-f243eedeabf5"
+    }
+  }
+}

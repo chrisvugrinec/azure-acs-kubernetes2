@@ -1,6 +1,5 @@
 #!/bin/bash
 echo "which resourcegroup"
 read resourcegroup
-echo "which template"
-read template
-azure group deployment create $resourcegroup --template-file $template
+name=$resourcegroup"-vnet"
+az group deployment create --name $name --resource-group $resourcegroup --template-file vnet-template.json

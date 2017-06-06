@@ -3,4 +3,4 @@ echo "resourcegroup name"
 read rg
 echo "read location"
 read location
-azure group create $rg $location
+az group create --name $rg --location $location
