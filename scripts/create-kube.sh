@@ -38,7 +38,8 @@ appId=$(echo $id | jq --raw-output ".appId")
 password=$(echo $id | jq --raw-output ".password")
 
 
-sed -in 's/XXX_NAME_XXX/'$name'/' kube-deploy.json
+sed -in 's/XXX_NAME_XXX/'$name'/' kube-deploy.jsona
+sed -in 's/XXX_RGNAME_XXX/'$resourcegroup'/' kube-deploy.json
 sed -in 's/XXX_SUBSCRIPTION_XXX/'$subscription'/' kube-deploy.json
 sed -in 's/XXX_VNET_XXX/'$vnet'/' kube-deploy.json
 sed -in 's/XXX_SUBNET_XXX/'$subnet'/' kube-deploy.json
